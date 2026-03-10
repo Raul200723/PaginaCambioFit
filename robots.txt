@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cambiofit.manus.space/sitemap.xml
