@@ -227,12 +227,11 @@ export default function Ejercicio() {
                       </span>
                     )}
                   </div>
-                  <button
-                    onClick={() => toast.success(`Rutina "${routine.name}" agregada`, { description: "Puedes verla en tu plan semanal." })}
-                    className="w-full py-2.5 rounded-xl border-2 border-gray-200 text-gray-700 text-sm font-bold hover:border-orange-400 hover:text-orange-500 transition-colors flex items-center justify-center gap-2"
-                  >
-                    Ver Rutina Completa <ChevronRight className="w-4 h-4" />
-                  </button>
+                  <Link href={`/ejercicio/${routine.name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}`}>
+                    <button className="w-full py-2.5 rounded-xl border-2 border-gray-200 text-gray-700 text-sm font-bold hover:border-orange-400 hover:text-orange-500 transition-colors flex items-center justify-center gap-2">
+                      Ver Rutina Completa <ChevronRight className="w-4 h-4" />
+                    </button>
+                  </Link>
                 </div>
               </div>
             ))}

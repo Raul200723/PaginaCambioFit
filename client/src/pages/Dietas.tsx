@@ -343,12 +343,11 @@ export default function Dietas() {
                       {recipe.time}
                     </span>
                   </div>
-                  <button
-                    onClick={() => toast.info("Receta completa próximamente", { description: "Estamos añadiendo más recetas cada semana." })}
-                    className="w-full mt-4 py-2 rounded-xl border border-gray-200 text-gray-600 text-sm font-semibold hover:border-orange-400 hover:text-orange-500 transition-colors"
-                  >
-                    Ver Receta Completa
-                  </button>
+                  <Link href={`/dietas/${recipe.name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}`}>
+                    <button className="w-full mt-4 py-2 rounded-xl border border-gray-200 text-gray-600 text-sm font-semibold hover:border-orange-400 hover:text-orange-500 transition-colors">
+                      Ver Receta Completa
+                    </button>
+                  </Link>
                 </div>
               </div>
             ))}

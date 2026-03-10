@@ -15,17 +15,22 @@ import NewsletterPopup from "./components/NewsletterPopup";
 import Home from "./pages/Home";
 import Dietas from "./pages/Dietas";
 import Ejercicio from "./pages/Ejercicio";
+import RecetaDetalle from "./pages/RecetaDetalle";
+import EjercicioDetalle from "./pages/EjercicioDetalle";
 import Transformaciones from "./pages/Transformaciones";
 import Blog from "./pages/Blog";
 import Recursos from "./pages/Recursos";
 import Contacto from "./pages/Contacto";
+import { useLocation } from "wouter";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/dietas" component={Dietas} />
+      <Route path="/dietas/:id" component={RecetaDetalle} />
       <Route path="/ejercicio" component={Ejercicio} />
+      <Route path="/ejercicio/:id" component={EjercicioDetalle} />
       <Route path="/transformaciones" component={Transformaciones} />
       <Route path="/blog" component={Blog} />
       <Route path="/recursos" component={Recursos} />
