@@ -21,6 +21,10 @@ import Transformaciones from "./pages/Transformaciones";
 import Blog from "./pages/Blog";
 import Recursos from "./pages/Recursos";
 import Contacto from "./pages/Contacto";
+import PoliticaPrivacidad from "./pages/PoliticaPrivacidad";
+import AvisoLegal from "./pages/AvisoLegal";
+import PoliticaCookies from "./pages/PoliticaCookies";
+import SobreNosotros from "./pages/SobreNosotros";
 import { useLocation } from "wouter";
 
 function Router() {
@@ -35,6 +39,10 @@ function Router() {
       <Route path="/blog" component={Blog} />
       <Route path="/recursos" component={Recursos} />
       <Route path="/contacto" component={Contacto} />
+      <Route path="/sobre-nosotros" component={SobreNosotros} />
+      <Route path="/politica-privacidad" component={PoliticaPrivacidad} />
+      <Route path="/aviso-legal" component={AvisoLegal} />
+      <Route path="/politica-cookies" component={PoliticaCookies} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>

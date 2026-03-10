@@ -170,9 +170,18 @@ export default function Footer() {
             © 2025 CambioFit. Todos los derechos reservados.
           </p>
           <div className="flex gap-5 text-sm text-gray-500">
-            <span className="hover:text-orange-400 cursor-pointer transition-colors">Política de Privacidad</span>
-            <span className="hover:text-orange-400 cursor-pointer transition-colors">Términos de Uso</span>
-            <span className="hover:text-orange-400 cursor-pointer transition-colors">Cookies</span>
+            <Link href="/politica-privacidad">
+              <span className="hover:text-orange-400 cursor-pointer transition-colors">Política de Privacidad</span>
+            </Link>
+            <Link href="/aviso-legal">
+              <span className="hover:text-orange-400 cursor-pointer transition-colors">Términos de Uso</span>
+            </Link>
+            <Link href="/politica-cookies">
+              <span className="hover:text-orange-400 cursor-pointer transition-colors">Cookies</span>
+            </Link>
+            <Link href="/sobre-nosotros">
+              <span className="hover:text-orange-400 cursor-pointer transition-colors">Sobre Nosotros</span>
+            </Link>
           </div>
         </div>
       </div>
