@@ -6,6 +6,7 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Link } from "wouter";
 import { Apple, Clock, Flame, CheckCircle, ArrowRight, Star, Download } from "lucide-react";
 import { toast } from "sonner";
+import { downloadPlanAsHTML } from "@/lib/generatePlanPDF";
 
 const FOOD_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663422138565/DHaZUEWUxgJfyccs8zR34y/healthy-food-ccTZeyNJRPWkAjJvobEkJp.webp";
 const NUTRITION_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663422138565/DHaZUEWUxgJfyccs8zR34y/nutrition-infographic-7abEZHbUCpGeornDvy9LqK.webp";
@@ -241,12 +242,26 @@ export default function Dietas() {
                       </li>
                     ))}
                   </ul>
-                  <button
-                    onClick={() => toast.success(`Plan "${plan.name}" seleccionado`, { description: "Completa tu perfil para personalizar tu plan." })}
-                    className="btn-gradient w-full py-3 rounded-xl font-bold text-sm"
-                  >
-                    Obtener Plan Gratis
-                  </button>
+              <button
+                onClick={() => {
+                  downloadPlanAsHTML({
+                    name: plan.name,
+                    subtitle: plan.subtitle,
+                    kcal: plan.kcal,
+                    protein: plan.protein,
+                    carbs: plan.carbs,
+                    fat: plan.fat,
+                    weeks: plan.weeks,
+                    level: plan.level,
+                    features: plan.features,
+                  });
+                  toast.success(`¡${plan.name} descargado!`, { description: "Abre el archivo en tu navegador." });
+                }}
+                className="btn-gradient w-full py-3 rounded-xl font-bold text-sm flex items-center justify-center gap-2"
+              >
+                <Download className="w-4 h-4" />
+                Descargar Plan Gratis
+              </button>
                 </div>
               </div>
             ))}

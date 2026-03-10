@@ -6,6 +6,7 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Link } from "wouter";
 import { Download, BookOpen, FileText, BarChart2, Star, ArrowRight, CheckCircle } from "lucide-react";
 import { toast } from "sonner";
+import { downloadPlanAsHTML } from "@/lib/generatePlanPDF";
 
 const freeResources = [
   {
@@ -274,7 +275,20 @@ export default function Recursos() {
                     ))}
                   </ul>
                   <button
-                    onClick={() => toast.success("¡Descarga iniciada!", { description: "Tu archivo está listo." })}
+                    onClick={() => {
+                      downloadPlanAsHTML({
+                        name: res.title,
+                        subtitle: res.desc,
+                        kcal: "Variable",
+                        protein: "Variable",
+                        carbs: "Variable",
+                        fat: "Variable",
+                        weeks: res.pages,
+                        level: "Todos",
+                        features: res.includes,
+                      });
+                      toast.success(`¡${res.title} descargado!`, { description: "Abre el archivo en tu navegador." });
+                    }}
                     className="btn-gradient w-full py-3 rounded-xl font-bold text-sm flex items-center justify-center gap-2"
                   >
                     <Download className="w-4 h-4" />
