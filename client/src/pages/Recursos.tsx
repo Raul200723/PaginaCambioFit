@@ -4,7 +4,7 @@
  */
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Link } from "wouter";
-import { Download, BookOpen, FileText, BarChart2, Star, Lock, ArrowRight, CheckCircle } from "lucide-react";
+import { Download, BookOpen, FileText, BarChart2, Star, ArrowRight, CheckCircle } from "lucide-react";
 import { toast } from "sonner";
 
 const freeResources = [
@@ -61,8 +61,6 @@ const premiumResources = [
     type: "Ebook PDF",
     pages: "200 páginas",
     icon: BookOpen,
-    price: "$19.99",
-    originalPrice: "$39.99",
     includes: ["Plan de 12 semanas", "100+ recetas", "30 rutinas", "Calculadora de macros"],
     img: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=300&h=200&fit=crop",
   },
@@ -72,19 +70,15 @@ const premiumResources = [
     type: "Programa Completo",
     pages: "90 días",
     icon: BarChart2,
-    price: "$29.99",
-    originalPrice: "$59.99",
     includes: ["Plan dieta 90 días", "Rutinas progresivas", "Soporte por email", "Comunidad privada"],
     img: "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=300&h=200&fit=crop",
   },
   {
-    title: "Guía Premium de Nutrición Deportiva",
+    title: "Guía Completa de Nutrición Deportiva",
     desc: "Todo sobre suplementación, timing de nutrientes, hidratación y optimización del rendimiento deportivo.",
     type: "Guía PDF",
     pages: "80 páginas",
     icon: FileText,
-    price: "$14.99",
-    originalPrice: "$29.99",
     includes: ["Guía de suplementos", "Planes de hidratación", "Recetas pre/post entreno", "Calculadoras"],
     img: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=300&h=200&fit=crop",
   },
@@ -240,13 +234,13 @@ export default function Recursos() {
       <section className="py-20 bg-white">
         <div className="container">
           <div className="text-center mb-14 reveal">
-            <span className="text-orange-500 font-bold text-sm uppercase tracking-wider">Recursos Premium</span>
+            <span className="text-green-500 font-bold text-sm uppercase tracking-wider">100% Gratis</span>
             <h2 className="section-title text-gray-900 mt-2">
-              Lleva Tu Transformación<br />
-              <span className="gradient-brand-text">Al Siguiente Nivel</span>
+              Recursos Avanzados<br />
+              <span className="gradient-brand-text">Completamente Gratis</span>
             </h2>
             <p className="text-gray-500 mt-4 max-w-xl mx-auto">
-              Programas completos y guías avanzadas para quienes quieren resultados más rápidos y profundos.
+              Programas completos y guías avanzadas. Todo sin costo, sin suscripciones, sin compromisos.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -262,14 +256,8 @@ export default function Recursos() {
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  <div className="absolute top-3 right-3 bg-orange-500 text-white text-xs font-bold px-2.5 py-1 rounded-full">
-                    Premium
-                  </div>
-                  <div className="absolute bottom-3 left-3">
-                    <span className="text-white font-black text-xl" style={{ fontFamily: "'Montserrat', sans-serif" }}>
-                      {res.price}
-                    </span>
-                    <span className="text-white/60 text-sm line-through ml-2">{res.originalPrice}</span>
+                  <div className="absolute top-3 right-3 bg-green-500 text-white text-xs font-bold px-2.5 py-1 rounded-full">
+                    GRATIS
                   </div>
                 </div>
                 <div className="p-5 bg-white">
@@ -286,11 +274,11 @@ export default function Recursos() {
                     ))}
                   </ul>
                   <button
-                    onClick={() => toast.success("¡Producto añadido!", { description: "Procesando tu compra..." })}
+                    onClick={() => toast.success("¡Descarga iniciada!", { description: "Tu archivo está listo." })}
                     className="btn-gradient w-full py-3 rounded-xl font-bold text-sm flex items-center justify-center gap-2"
                   >
-                    <Lock className="w-4 h-4" />
-                    Comprar Ahora — {res.price}
+                    <Download className="w-4 h-4" />
+                    Descargar Gratis
                   </button>
                 </div>
               </div>

@@ -20,7 +20,6 @@ const plans = [
     fat: "25%",
     weeks: "8 semanas",
     level: "Todos los niveles",
-    price: "Gratis",
     color: "from-orange-500 to-red-500",
     features: [
       "Plan de 56 días completo",
@@ -40,7 +39,6 @@ const plans = [
     fat: "15%",
     weeks: "12 semanas",
     level: "Intermedio–Avanzado",
-    price: "Premium",
     color: "from-blue-500 to-indigo-600",
     features: [
       "Plan de 84 días completo",
@@ -60,7 +58,6 @@ const plans = [
     fat: "25%",
     weeks: "Indefinido",
     level: "Todos los niveles",
-    price: "Gratis",
     color: "from-green-500 to-emerald-600",
     features: [
       "Guía de alimentación flexible",
@@ -80,7 +77,6 @@ const plans = [
     fat: "70%",
     weeks: "6 semanas",
     level: "Avanzado",
-    price: "Premium",
     color: "from-purple-500 to-pink-600",
     features: [
       "Guía de adaptación cetogénica",
@@ -247,13 +243,9 @@ export default function Dietas() {
                   </ul>
                   <button
                     onClick={() => toast.success(`Plan "${plan.name}" seleccionado`, { description: "Completa tu perfil para personalizar tu plan." })}
-                    className={`w-full py-3 rounded-xl font-bold text-sm transition-all ${
-                      plan.popular
-                        ? "btn-gradient"
-                        : "border-2 border-gray-200 text-gray-700 hover:border-orange-400 hover:text-orange-500"
-                    }`}
+                    className="btn-gradient w-full py-3 rounded-xl font-bold text-sm"
                   >
-                    {plan.price === "Gratis" ? "Obtener Plan Gratis" : "Ver Plan Premium"}
+                    Obtener Plan Gratis
                   </button>
                 </div>
               </div>
