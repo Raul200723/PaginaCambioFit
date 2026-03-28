@@ -71,14 +71,16 @@ export default function Footer() {
             </p>
             <div className="flex gap-3">
               {[
-                { icon: Instagram, href: "#", label: "Instagram" },
-                { icon: Youtube, href: "#", label: "YouTube" },
-                { icon: Facebook, href: "#", label: "Facebook" },
-                { icon: Twitter, href: "#", label: "Twitter" },
+                { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
+                { icon: Youtube, href: "https://youtube.com", label: "YouTube" },
+                { icon: Facebook, href: "https://facebook.com", label: "Facebook" },
+                { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
               ].map(({ icon: Icon, href, label }) => (
                 <a
                   key={label}
                   href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={label}
                   className="w-9 h-9 rounded-lg bg-gray-800 hover:bg-orange-500 flex items-center justify-center transition-colors"
                 >
@@ -112,59 +114,58 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Programas */}
+          {/* Recursos */}
           <div>
             <h4 className="font-bold text-white mb-4 text-sm uppercase tracking-wider" style={{ fontFamily: "'Montserrat', sans-serif" }}>
-              Programas
+              Recursos
             </h4>
             <ul className="space-y-2.5">
               {[
-                "Pérdida de Peso",
-                "Ganancia Muscular",
-                "Fitness en Casa",
-                "Nutrición Deportiva",
+                { label: "Guía de Nutrición", href: "/blog" },
+                { label: "Rutinas Gratis", href: "/ejercicios" },
+                { label: "Recetas Saludables", href: "/recetas" },
+                { label: "Artículos", href: "/blog" },
               ].map((item) => (
-                <li key={item}>
-                  <span className="text-gray-400 hover:text-orange-400 text-sm transition-colors flex items-center gap-2 cursor-pointer">
-                    <ArrowRight className="w-3 h-3" />
-                    {item}
-                  </span>
+                <li key={item.label}>
+                  <Link href={item.href}>
+                    <span className="text-gray-400 hover:text-orange-400 text-sm transition-colors flex items-center gap-2">
+                      <ArrowRight className="w-3 h-3" />
+                      {item.label}
+                    </span>
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Contacto */}
+          {/* Información */}
           <div>
             <h4 className="font-bold text-white mb-4 text-sm uppercase tracking-wider" style={{ fontFamily: "'Montserrat', sans-serif" }}>
-              Contacto
+              Información
             </h4>
             <ul className="space-y-3">
               <li className="flex items-center gap-3 text-gray-400 text-sm">
                 <Mail className="w-4 h-4 text-orange-400 shrink-0" />
-                hola@cambiofit.com
-              </li>
-              <li className="flex items-center gap-3 text-gray-400 text-sm">
-                <Phone className="w-4 h-4 text-orange-400 shrink-0" />
-                +1 (555) 123-4567
+                <a href="mailto:info@cambiofit.com" className="hover:text-orange-400 transition-colors">
+                  info@cambiofit.com
+                </a>
               </li>
               <li className="flex items-start gap-3 text-gray-400 text-sm">
                 <MapPin className="w-4 h-4 text-orange-400 shrink-0 mt-0.5" />
-                Comunidad online global
+                <span>Plataforma Online Global</span>
+              </li>
+              <li className="flex items-start gap-3 text-gray-400 text-sm">
+                <span className="text-xs text-orange-400 font-semibold">24/7</span>
+                <span>Disponible en línea</span>
               </li>
             </ul>
-            <div className="mt-5 p-4 rounded-xl bg-gray-800/60 border border-gray-700">
-              <p className="text-xs text-gray-400 mb-1">Horario de atención</p>
-              <p className="text-sm text-white font-semibold">Lun–Vie: 9:00 – 18:00</p>
-              <p className="text-xs text-orange-400 mt-1">Respuesta en menos de 24h</p>
-            </div>
           </div>
         </div>
 
         {/* Bottom bar */}
         <div className="border-t border-gray-800 mt-12 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-gray-500 text-sm">
-            © 2025 CambioFit. Todos los derechos reservados.
+              © 2026 CambioFit. Todos los derechos reservados. | Blog educativo de fitness y nutrición.
           </p>
           <div className="flex gap-5 text-sm text-gray-500">
             <Link href="/politica-privacidad">
