@@ -9,12 +9,10 @@ import { Menu, X, Flame, Dumbbell } from "lucide-react";
 
 const navLinks = [
   { href: "/", label: "Inicio" },
+  { href: "/blog", label: "Blog" },
   { href: "/dietas", label: "Dietas" },
   { href: "/ejercicio", label: "Ejercicio" },
-  { href: "/transformaciones", label: "Transformaciones" },
-  { href: "/blog", label: "Blog" },
-  { href: "/recursos", label: "Recursos" },
-  { href: "/contacto", label: "Contacto" },
+  { href: "/sobre-nosotros", label: "Sobre Nosotros" },
 ];
 
 export default function Navbar() {
@@ -77,12 +75,7 @@ export default function Navbar() {
 
           {/* CTA + Mobile toggle */}
           <div className="flex items-center gap-3">
-            <Link href="/contacto" className="hidden md:block">
-              <button className="btn-gradient px-5 py-2.5 rounded-xl text-sm font-bold flex items-center gap-2">
-                <Flame className="w-4 h-4" />
-                Empieza Ahora
-              </button>
-            </Link>
+
             <button
               className="lg:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors"
               onClick={() => setIsOpen(!isOpen)}
@@ -114,12 +107,7 @@ export default function Navbar() {
               </span>
             </Link>
           ))}
-          <Link href="/contacto">
-            <button className="btn-gradient w-full mt-3 px-5 py-3 rounded-xl text-base font-bold flex items-center justify-center gap-2">
-              <Flame className="w-5 h-5" />
-              Empieza Tu Transformación
-            </button>
-          </Link>
+
         </div>
       </div>
     </nav>

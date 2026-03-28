@@ -1,278 +1,223 @@
 /*
- * CambioFit Blog Page — Artículos de salud, ejercicio, nutrición y motivación
- * SEO: blog fitness, artículos salud, consejos nutrición, rutinas ejercicio
+ * CambioFit Blog — Artículos Educativos Optimizados para SEO y AdSense
  */
-import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { useState } from "react";
-import { Clock, User, Tag, ArrowRight, Search, ChevronRight } from "lucide-react";
-import { toast } from "sonner";
+import { useState, useMemo } from "react";
+import { Button } from "@/components/ui/button";
+import { Search, Clock, User } from "lucide-react";
 
-const categories = ["Todos", "Nutrición", "Ejercicio", "Motivación", "Pérdida de Peso", "Músculo", "Recetas", "Estilo de Vida"];
-
-const posts = [
+const BLOG_ARTICLES = [
   {
-    title: "Los 10 Mejores Alimentos Para Perder Grasa Corporal",
-    excerpt: "Descubre qué alimentos aceleran tu metabolismo y te ayudan a quemar grasa de forma natural. Incluye lista de compras y consejos prácticos.",
+    id: 1,
+    title: "Déficit Calórico: La Clave para Perder Peso de Forma Sostenible",
+    excerpt: "Descubre cómo crear un déficit calórico seguro y efectivo para perder peso sin sacrificar tu masa muscular.",
     category: "Nutrición",
-    author: "Dr. Martínez",
-    date: "8 Mar 2025",
-    readTime: "8 min",
-    img: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&h=400&fit=crop",
-    featured: true,
-    tags: ["dieta", "pérdida de peso", "nutrición"],
+    author: "CambioFit",
+    date: "15 Mar 2026",
+    readTime: "8 min"
   },
   {
-    title: "Rutina HIIT de 20 Minutos Para Quemar Grasa en Casa",
-    excerpt: "Sin equipamiento, sin excusas. Esta rutina de alta intensidad quema hasta 400 calorías en solo 20 minutos desde la comodidad de tu hogar.",
+    id: 2,
+    title: "5 Ejercicios Comprobados para Ganar Músculo Rápidamente",
+    excerpt: "Los ejercicios más efectivos para hipertrofia muscular, con instrucciones detalladas y progresión de entrenamiento.",
     category: "Ejercicio",
-    author: "Coach Ana",
-    date: "5 Mar 2025",
-    readTime: "6 min",
-    img: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop",
-    featured: false,
-    tags: ["HIIT", "fitness en casa", "cardio"],
+    author: "CambioFit",
+    date: "14 Mar 2026",
+    readTime: "10 min"
   },
   {
-    title: "Cómo Calcular Tus Macros Para Tu Objetivo Fitness",
-    excerpt: "Guía completa para calcular proteínas, carbohidratos y grasas según tu objetivo: perder peso, ganar músculo o mantener tu físico actual.",
+    id: 3,
+    title: "Proteína: Guía Completa para Optimizar tu Ingesta",
+    excerpt: "Todo lo que necesitas saber sobre proteína: cuánta necesitas, mejores fuentes y cómo optimizar tu consumo.",
     category: "Nutrición",
-    author: "Nutricionista López",
-    date: "1 Mar 2025",
-    readTime: "10 min",
-    img: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&h=400&fit=crop",
-    featured: false,
-    tags: ["macros", "dieta", "nutrición deportiva"],
+    author: "CambioFit",
+    date: "13 Mar 2026",
+    readTime: "9 min"
   },
   {
-    title: "5 Errores que Sabotean Tu Pérdida de Peso",
-    excerpt: "¿Haces dieta y ejercicio pero no ves resultados? Descubre los errores más comunes que impiden bajar de peso y cómo corregirlos.",
-    category: "Pérdida de Peso",
-    author: "Dr. Martínez",
-    date: "25 Feb 2025",
-    readTime: "7 min",
-    img: "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=600&h=400&fit=crop",
-    featured: false,
-    tags: ["pérdida de peso", "errores", "consejos"],
+    id: 4,
+    title: "Metabolismo Basal: Cómo Acelerarlo Naturalmente",
+    excerpt: "Estrategias científicamente comprobadas para aumentar tu metabolismo y quemar más calorías en reposo.",
+    category: "Nutrición",
+    author: "CambioFit",
+    date: "12 Mar 2026",
+    readTime: "7 min"
   },
   {
-    title: "Guía Completa Para Ganar Músculo: Todo lo que Necesitas Saber",
-    excerpt: "Desde la frecuencia de entrenamiento hasta la nutrición óptima. Todo lo que necesitas saber para ganar masa muscular de forma efectiva.",
-    category: "Músculo",
-    author: "Coach Roberto",
-    date: "20 Feb 2025",
-    readTime: "12 min",
-    img: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&h=400&fit=crop",
-    featured: false,
-    tags: ["músculo", "hipertrofia", "entrenamiento"],
+    id: 5,
+    title: "Rutina de Entrenamiento Full Body para Principiantes",
+    excerpt: "Programa de entrenamiento completo para comenzar tu transformación física sin experiencia previa.",
+    category: "Ejercicio",
+    author: "CambioFit",
+    date: "11 Mar 2026",
+    readTime: "12 min"
   },
   {
-    title: "Receta: Bowl de Proteína con Quinoa y Aguacate",
-    excerpt: "Una receta deliciosa, nutritiva y fácil de preparar. Alta en proteínas, perfecta para después del entrenamiento o como almuerzo saludable.",
-    category: "Recetas",
-    author: "Chef Fitness",
-    date: "15 Feb 2025",
-    readTime: "5 min",
-    img: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&h=400&fit=crop",
-    featured: false,
-    tags: ["recetas", "proteína", "quinoa"],
+    id: 6,
+    title: "Carbohidratos: Desmintiendo Mitos y Optimizando tu Dieta",
+    excerpt: "Aprende por qué los carbohidratos no son enemigos y cómo incluirlos estratégicamente en tu plan de nutrición.",
+    category: "Nutrición",
+    author: "CambioFit",
+    date: "10 Mar 2026",
+    readTime: "8 min"
   },
   {
-    title: "Cómo Mantener la Motivación Para Hacer Ejercicio",
-    excerpt: "Los secretos psicológicos para mantener la constancia en el gimnasio. Técnicas probadas que usan los atletas de élite para no rendirse.",
-    category: "Motivación",
-    author: "Psicóloga Deportiva",
-    date: "10 Feb 2025",
-    readTime: "9 min",
-    img: "https://images.unsplash.com/photo-1517963879433-6ad2b056d712?w=600&h=400&fit=crop",
-    featured: false,
-    tags: ["motivación", "hábitos", "mentalidad"],
+    id: 7,
+    title: "Grasas Saludables: Por Qué son Esenciales para tu Salud",
+    excerpt: "Descubre cuáles son las grasas saludables y cómo incorporarlas en tu dieta para optimizar tu composición corporal.",
+    category: "Nutrición",
+    author: "CambioFit",
+    date: "9 Mar 2026",
+    readTime: "7 min"
   },
   {
-    title: "El Sueño y la Recuperación: Claves del Progreso Físico",
-    excerpt: "Dormir bien no es opcional si quieres resultados. Descubre cómo el sueño afecta tu composición corporal, hormonas y rendimiento deportivo.",
+    id: 8,
+    title: "Hidratación: El Factor Olvidado en tu Transformación Física",
+    excerpt: "Cómo la hidratación adecuada acelera tu metabolismo, mejora el rendimiento y facilita la pérdida de peso.",
+    category: "Nutrición",
+    author: "CambioFit",
+    date: "8 Mar 2026",
+    readTime: "6 min"
+  },
+  {
+    id: 9,
+    title: "Recuperación Muscular: Estrategias para Maximizar Resultados",
+    excerpt: "Técnicas de recuperación post-entrenamiento para optimizar el crecimiento muscular y prevenir lesiones.",
+    category: "Ejercicio",
+    author: "CambioFit",
+    date: "7 Mar 2026",
+    readTime: "9 min"
+  },
+  {
+    id: 10,
+    title: "Sueño y Fitness: Cómo el Descanso Acelera tu Transformación",
+    excerpt: "La ciencia detrás de cómo dormir bien es fundamental para perder peso y ganar músculo.",
     category: "Estilo de Vida",
-    author: "Dr. Martínez",
-    date: "5 Feb 2025",
-    readTime: "8 min",
-    img: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&h=400&fit=crop",
-    featured: false,
-    tags: ["sueño", "recuperación", "bienestar"],
+    author: "CambioFit",
+    date: "6 Mar 2026",
+    readTime: "8 min"
   },
+  {
+    id: 11,
+    title: "Estrés y Peso: Cómo Controlar el Cortisol para Perder Grasa",
+    excerpt: "Entiende la relación entre estrés crónico y ganancia de peso, y aprende estrategias para controlarlo.",
+    category: "Estilo de Vida",
+    author: "CambioFit",
+    date: "5 Mar 2026",
+    readTime: "7 min"
+  },
+  {
+    id: 12,
+    title: "Suplementación: Qué Funciona Realmente y Qué Evitar",
+    excerpt: "Guía basada en evidencia sobre suplementos de fitness: cuáles son efectivos y cuáles son una pérdida de dinero.",
+    category: "Nutrición",
+    author: "CambioFit",
+    date: "4 Mar 2026",
+    readTime: "10 min"
+  }
 ];
 
 export default function Blog() {
-  useScrollReveal();
-  const [activeCategory, setActiveCategory] = useState("Todos");
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
-  const filtered = posts.filter((p) => {
-    const matchCat = activeCategory === "Todos" || p.category === activeCategory;
-    const matchSearch = p.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      p.excerpt.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchCat && matchSearch;
-  });
+  const categories = ["Nutrición", "Ejercicio", "Estilo de Vida"];
 
-  const featuredPost = posts.find((p) => p.featured);
+  const filteredArticles = useMemo(() => {
+    return BLOG_ARTICLES.filter(article => {
+      const matchesSearch = article.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                           article.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
+      const matchesCategory = !selectedCategory || article.category === selectedCategory;
+      return matchesSearch && matchesCategory;
+    });
+  }, [searchTerm, selectedCategory]);
 
   return (
-    <div className="min-h-screen pt-16">
-      {/* Hero */}
-      <section className="py-16 bg-gradient-to-br from-gray-50 to-orange-50">
-        <div className="container">
-          <div className="max-w-2xl reveal">
-            <span className="text-orange-500 font-bold text-sm uppercase tracking-wider">Blog CambioFit</span>
-            <h1 className="section-title text-gray-900 mt-2">
-              Artículos de Salud,<br />
-              <span className="gradient-brand-text">Fitness y Nutrición</span>
-            </h1>
-            <p className="text-gray-600 mt-4 text-lg">
-              Contenido experto sobre dietas efectivas, rutinas de ejercicio, pérdida de peso y estilo de vida saludable.
-            </p>
-          </div>
-
-          {/* Search */}
-          <div className="mt-8 reveal max-w-lg">
-            <div className="relative">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-              <input
-                type="search"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Buscar artículos..."
-                className="w-full pl-12 pr-4 py-3.5 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-orange-400 bg-white shadow-sm"
-              />
-            </div>
-          </div>
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      {/* Header */}
+      <section className="pt-24 pb-12 px-4 md:px-8 bg-gradient-to-r from-orange-500 to-red-500">
+        <div className="max-w-6xl mx-auto text-white">
+          <h1 className="text-5xl md:text-6xl font-black mb-4">Blog de Fitness y Nutrición</h1>
+          <p className="text-xl opacity-90">
+            Artículos educativos sobre dieta, ejercicio y transformación física
+          </p>
         </div>
       </section>
 
-      {/* Featured post */}
-      {featuredPost && (
-        <section className="py-12 bg-white">
-          <div className="container">
-            <div className="reveal">
-              <span className="text-orange-500 font-bold text-sm uppercase tracking-wider mb-6 block">Artículo Destacado</span>
-              <div
-                className="card-hover rounded-2xl overflow-hidden border border-gray-100 shadow-md cursor-pointer"
-                onClick={() => toast.info(featuredPost.title, { description: "Artículo completo próximamente." })}
-              >
-                <div className="grid grid-cols-1 lg:grid-cols-2">
-                  <div className="relative h-64 lg:h-auto overflow-hidden">
-                    <img
-                      src={featuredPost.img}
-                      alt={featuredPost.title}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                    />
-                    <span className="absolute top-4 left-4 bg-orange-500 text-white text-xs font-bold px-3 py-1.5 rounded-full">
-                      Destacado
-                    </span>
-                  </div>
-                  <div className="p-8 flex flex-col justify-center">
-                    <span className="text-orange-500 text-sm font-bold mb-2">{featuredPost.category}</span>
-                    <h2 className="text-2xl font-black text-gray-900 mb-3 leading-tight" style={{ fontFamily: "'Montserrat', sans-serif" }}>
-                      {featuredPost.title}
-                    </h2>
-                    <p className="text-gray-500 leading-relaxed mb-5">{featuredPost.excerpt}</p>
-                    <div className="flex items-center gap-4 text-sm text-gray-400 mb-5">
-                      <span className="flex items-center gap-1.5">
-                        <User className="w-4 h-4" />
-                        {featuredPost.author}
-                      </span>
-                      <span className="flex items-center gap-1.5">
-                        <Clock className="w-4 h-4" />
-                        {featuredPost.readTime} lectura
-                      </span>
-                      <span>{featuredPost.date}</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-orange-500 font-bold">
-                      Leer artículo completo <ArrowRight className="w-4 h-4" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+      {/* Search and Filters */}
+      <section className="py-12 px-4 md:px-8 bg-white border-b border-slate-200">
+        <div className="max-w-6xl mx-auto">
+          {/* Search Bar */}
+          <div className="mb-8 relative">
+            <Search className="absolute left-3 top-3 w-5 h-5 text-slate-400" />
+            <input
+              type="text"
+              placeholder="Buscar artículos..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="w-full pl-10 pr-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+            />
           </div>
-        </section>
-      )}
 
-      {/* Categories filter */}
-      <section className="py-6 bg-gray-50 border-y border-gray-100 sticky top-16 z-30">
-        <div className="container">
-          <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide">
-            {categories.map((cat) => (
-              <button
+          {/* Category Filters */}
+          <div className="flex flex-wrap gap-3">
+            <Button
+              variant={selectedCategory === null ? "default" : "outline"}
+              onClick={() => setSelectedCategory(null)}
+              className={selectedCategory === null ? "bg-orange-500 hover:bg-orange-600" : ""}
+            >
+              Todos ({BLOG_ARTICLES.length})
+            </Button>
+            {categories.map(cat => (
+              <Button
                 key={cat}
-                onClick={() => setActiveCategory(cat)}
-                className={`whitespace-nowrap px-4 py-2 rounded-full text-sm font-semibold transition-all ${
-                  activeCategory === cat
-                    ? "gradient-brand text-white shadow-md"
-                    : "bg-white text-gray-600 border border-gray-200 hover:border-orange-300 hover:text-orange-500"
-                }`}
-                style={{ fontFamily: "'Montserrat', sans-serif" }}
+                variant={selectedCategory === cat ? "default" : "outline"}
+                onClick={() => setSelectedCategory(cat)}
+                className={selectedCategory === cat ? "bg-orange-500 hover:bg-orange-600" : ""}
               >
-                {cat}
-              </button>
+                {cat} ({BLOG_ARTICLES.filter(a => a.category === cat).length})
+              </Button>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Posts grid */}
-      <section className="py-16 bg-white">
-        <div className="container">
-          {filtered.length === 0 ? (
-            <div className="text-center py-20">
-              <p className="text-gray-400 text-lg">No se encontraron artículos para tu búsqueda.</p>
+      {/* Articles Grid */}
+      <section className="py-16 px-4 md:px-8">
+        <div className="max-w-6xl mx-auto">
+          {filteredArticles.length === 0 ? (
+            <div className="text-center py-12">
+              <p className="text-xl text-slate-600">No se encontraron artículos. Intenta con otros términos de búsqueda.</p>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filtered.map((post, i) => (
-                <div
-                  key={post.title}
-                  className={`reveal reveal-delay-${(i % 3) + 1} card-hover bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm cursor-pointer`}
-                  onClick={() => toast.info(post.title, { description: "Artículo completo próximamente." })}
-                >
-                  <div className="relative h-48 overflow-hidden">
-                    <img
-                      src={post.img}
-                      alt={post.title}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                    />
-                    <span className="absolute top-3 left-3 bg-orange-500 text-white text-xs font-bold px-2.5 py-1 rounded-full">
-                      {post.category}
-                    </span>
-                  </div>
-                  <div className="p-5">
-                    <div className="flex items-center gap-3 text-xs text-gray-400 mb-2">
-                      <span className="flex items-center gap-1">
-                        <Clock className="w-3.5 h-3.5" />
-                        {post.readTime}
+            <div className="grid md:grid-cols-2 gap-8">
+              {filteredArticles.map(article => (
+                <article key={article.id} className="bg-white rounded-lg border border-slate-200 overflow-hidden hover:shadow-lg transition-shadow">
+                  <div className="h-48 bg-gradient-to-br from-slate-200 to-slate-300"></div>
+                  <div className="p-6">
+                    <div className="flex items-center gap-3 mb-3 flex-wrap">
+                      <span className="text-xs font-semibold text-orange-600 uppercase bg-orange-50 px-3 py-1 rounded">
+                        {article.category}
                       </span>
-                      <span>{post.date}</span>
+                      <div className="flex items-center gap-1 text-xs text-slate-500">
+                        <Clock className="w-3 h-3" />
+                        {article.readTime}
+                      </div>
                     </div>
-                    <h3 className="font-bold text-gray-900 text-base leading-snug mb-2 hover:text-orange-500 transition-colors" style={{ fontFamily: "'Montserrat', sans-serif" }}>
-                      {post.title}
+                    <h3 className="text-xl font-bold text-slate-900 mb-3 line-clamp-2">
+                      {article.title}
                     </h3>
-                    <p className="text-gray-500 text-sm leading-relaxed line-clamp-2 mb-3">{post.excerpt}</p>
-                    <div className="flex flex-wrap gap-1.5 mb-3">
-                      {post.tags.slice(0, 2).map((tag) => (
-                        <span key={tag} className="text-xs bg-gray-100 text-gray-500 px-2 py-0.5 rounded-full flex items-center gap-1">
-                          <Tag className="w-2.5 h-2.5" />
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs text-gray-400 flex items-center gap-1">
-                        <User className="w-3.5 h-3.5" />
-                        {post.author}
-                      </span>
-                      <span className="text-orange-500 text-sm font-semibold flex items-center gap-1">
-                        Leer <ChevronRight className="w-4 h-4" />
-                      </span>
+                    <p className="text-slate-600 text-sm mb-4 line-clamp-2">
+                      {article.excerpt}
+                    </p>
+                    <div className="flex items-center justify-between pt-4 border-t border-slate-200">
+                      <div className="flex items-center gap-2 text-xs text-slate-500">
+                        <User className="w-3 h-3" />
+                        {article.author}
+                      </div>
+                      <span className="text-xs text-slate-500">{article.date}</span>
                     </div>
                   </div>
-                </div>
+                </article>
               ))}
             </div>
           )}
@@ -280,30 +225,23 @@ export default function Blog() {
       </section>
 
       {/* Newsletter CTA */}
-      <section className="py-16 bg-gray-50">
-        <div className="container">
-          <div className="max-w-2xl mx-auto text-center reveal">
-            <h2 className="text-3xl font-black text-gray-900 mb-3" style={{ fontFamily: "'Montserrat', sans-serif" }}>
-              No Te Pierdas Ningún Artículo
-            </h2>
-            <p className="text-gray-500 mb-6">Suscríbete y recibe los mejores artículos de fitness directamente en tu correo.</p>
-            <form
-              className="flex flex-col sm:flex-row gap-3"
-              onSubmit={(e) => {
-                e.preventDefault();
-                toast.success("¡Suscripción exitosa!", { description: "Recibirás nuestros artículos cada semana." });
-              }}
-            >
-              <input
-                type="email"
-                placeholder="Tu correo electrónico"
-                className="flex-1 px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-orange-400"
-                required
-              />
-              <button type="submit" className="btn-gradient px-8 py-3 rounded-xl font-bold whitespace-nowrap">
-                Suscribirme
-              </button>
-            </form>
+      <section className="py-16 px-4 md:px-8 bg-slate-100">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl font-bold text-slate-900 mb-4">
+            No te pierdas nuevos artículos
+          </h2>
+          <p className="text-slate-600 mb-6">
+            Suscríbete para recibir los últimos artículos sobre fitness, nutrición y transformación física.
+          </p>
+          <div className="flex gap-2 max-w-md mx-auto">
+            <input
+              type="email"
+              placeholder="Tu email"
+              className="flex-1 px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+            />
+            <Button className="bg-orange-500 hover:bg-orange-600 text-white">
+              Suscribirse
+            </Button>
           </div>
         </div>
       </section>

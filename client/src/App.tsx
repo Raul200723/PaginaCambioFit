@@ -1,7 +1,6 @@
 /*
- * CambioFit App — High-Energy Sport Tech
- * Routes: Home, Dietas, Ejercicio, Transformaciones, Blog, Recursos, Contacto
- * Layout: Navbar (fixed top) + Page content + Footer + NewsletterPopup
+ * CambioFit App — Blog de Fitness Optimizado para AdSense
+ * Routes: Home, Blog, Dietas, Ejercicio, Sobre Nosotros, Políticas Legales
  */
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -11,34 +10,22 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import NewsletterPopup from "./components/NewsletterPopup";
 import Home from "./pages/Home";
+import Blog from "./pages/Blog";
 import Dietas from "./pages/Dietas";
 import Ejercicio from "./pages/Ejercicio";
-import RecetaDetalle from "./pages/RecetaDetalle";
-import EjercicioDetalle from "./pages/EjercicioDetalle";
-import Transformaciones from "./pages/Transformaciones";
-import Blog from "./pages/Blog";
-import Recursos from "./pages/Recursos";
-import Contacto from "./pages/Contacto";
+import SobreNosotros from "./pages/SobreNosotros";
 import PoliticaPrivacidad from "./pages/PoliticaPrivacidad";
 import AvisoLegal from "./pages/AvisoLegal";
 import PoliticaCookies from "./pages/PoliticaCookies";
-import SobreNosotros from "./pages/SobreNosotros";
-import { useLocation } from "wouter";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
-      <Route path="/dietas" component={Dietas} />
-      <Route path="/dietas/:id" component={RecetaDetalle} />
-      <Route path="/ejercicio" component={Ejercicio} />
-      <Route path="/ejercicio/:id" component={EjercicioDetalle} />
-      <Route path="/transformaciones" component={Transformaciones} />
       <Route path="/blog" component={Blog} />
-      <Route path="/recursos" component={Recursos} />
-      <Route path="/contacto" component={Contacto} />
+      <Route path="/dietas" component={Dietas} />
+      <Route path="/ejercicio" component={Ejercicio} />
       <Route path="/sobre-nosotros" component={SobreNosotros} />
       <Route path="/politica-privacidad" component={PoliticaPrivacidad} />
       <Route path="/aviso-legal" component={AvisoLegal} />
@@ -58,7 +45,6 @@ function App() {
           <Navbar />
           <Router />
           <Footer />
-          <NewsletterPopup />
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>

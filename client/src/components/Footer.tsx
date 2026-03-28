@@ -95,11 +95,10 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2.5">
               {[
+                { href: "/blog", label: "Blog de Fitness" },
                 { href: "/dietas", label: "Planes de Dieta" },
                 { href: "/ejercicio", label: "Rutinas de Ejercicio" },
-                { href: "/transformaciones", label: "Transformaciones" },
-                { href: "/blog", label: "Blog de Salud" },
-                { href: "/recursos", label: "Recursos Gratis" },
+                { href: "/sobre-nosotros", label: "Sobre Nosotros" },
               ].map((link) => (
                 <li key={link.href}>
                   <Link href={link.href}>
@@ -120,12 +119,10 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2.5">
               {[
-                "Plan Pérdida de Peso",
+                "Pérdida de Peso",
                 "Ganancia Muscular",
                 "Fitness en Casa",
                 "Nutrición Deportiva",
-                "Reto 30 Días",
-                "Plan Premium",
               ].map((item) => (
                 <li key={item}>
                   <span className="text-gray-400 hover:text-orange-400 text-sm transition-colors flex items-center gap-2 cursor-pointer">
