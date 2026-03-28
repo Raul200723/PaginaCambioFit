@@ -95,9 +95,9 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2.5">
               {[
+                { href: "/recetas", label: "Recetas Gratis" },
+                { href: "/ejercicios", label: "Ejercicios Gratis" },
                 { href: "/blog", label: "Blog de Fitness" },
-                { href: "/dietas", label: "Planes de Dieta" },
-                { href: "/ejercicio", label: "Rutinas de Ejercicio" },
                 { href: "/sobre-nosotros", label: "Sobre Nosotros" },
               ].map((link) => (
                 <li key={link.href}>

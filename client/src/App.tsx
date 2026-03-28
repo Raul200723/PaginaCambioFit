@@ -12,6 +12,8 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Blog from "./pages/Blog";
+import Recetas from "./pages/Recetas";
+import Ejercicios from "./pages/Ejercicios";
 import Dietas from "./pages/Dietas";
 import Ejercicio from "./pages/Ejercicio";
 import SobreNosotros from "./pages/SobreNosotros";
@@ -24,6 +26,8 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/blog" component={Blog} />
+      <Route path="/recetas" component={Recetas} />
+      <Route path="/ejercicios" component={Ejercicios} />
       <Route path="/dietas" component={Dietas} />
       <Route path="/ejercicio" component={Ejercicio} />
       <Route path="/sobre-nosotros" component={SobreNosotros} />

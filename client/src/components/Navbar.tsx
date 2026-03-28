@@ -9,9 +9,9 @@ import { Menu, X, Flame, Dumbbell } from "lucide-react";
 
 const navLinks = [
   { href: "/", label: "Inicio" },
+  { href: "/recetas", label: "Recetas" },
+  { href: "/ejercicios", label: "Ejercicios" },
   { href: "/blog", label: "Blog" },
-  { href: "/dietas", label: "Dietas" },
-  { href: "/ejercicio", label: "Ejercicio" },
   { href: "/sobre-nosotros", label: "Sobre Nosotros" },
 ];
 
