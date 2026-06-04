@@ -1,6 +1,6 @@
 /*
- * CambioFit App — Blog de Fitness Optimizado para AdSense
- * Routes: Home, Blog, Dietas, Ejercicio, Sobre Nosotros, Políticas Legales
+ * CambioFit App — Blog de Fitness Profesional Optimizado para AdSense
+ * Routes: Home, Blog, Sobre Nosotros, Contacto, Políticas Legales
  */
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -12,28 +12,25 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Blog from "./pages/Blog";
-import Recetas from "./pages/Recetas";
-import Ejercicios from "./pages/Ejercicios";
-import Dietas from "./pages/Dietas";
-import Ejercicio from "./pages/Ejercicio";
 import SobreNosotros from "./pages/SobreNosotros";
+import Contacto from "./pages/Contacto";
 import PoliticaPrivacidad from "./pages/PoliticaPrivacidad";
 import AvisoLegal from "./pages/AvisoLegal";
 import PoliticaCookies from "./pages/PoliticaCookies";
+import TerminosCondiciones from "./pages/TerminosCondiciones";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/blog" component={Blog} />
-      <Route path="/recetas" component={Recetas} />
-      <Route path="/ejercicios" component={Ejercicios} />
-      <Route path="/dietas" component={Dietas} />
-      <Route path="/ejercicio" component={Ejercicio} />
+      <Route path="/blog/:slug" component={Blog} />
       <Route path="/sobre-nosotros" component={SobreNosotros} />
+      <Route path="/contacto" component={Contacto} />
       <Route path="/politica-privacidad" component={PoliticaPrivacidad} />
       <Route path="/aviso-legal" component={AvisoLegal} />
       <Route path="/politica-cookies" component={PoliticaCookies} />
+      <Route path="/terminos-condiciones" component={TerminosCondiciones} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>
