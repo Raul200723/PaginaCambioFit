@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacto — Escríbenos | CambioFit</title>
+<meta name="description" content="¿Tienes alguna pregunta o sugerencia sobre nuestro contenido de fitness y nutrición? Contacta con el equipo de CambioFit a través de nuestro formulario.">
+<link rel="canonical" href="https://cambiofit.github.io/contacto.html">
+<meta property="og:title" content="Contacto | CambioFit">
+<meta property="og:description" content="Contacta con el equipo de CambioFit. Leemos y respondemos todos los mensajes.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Saltar al contenido principal</a>
+<header class="site-header" role="banner">
+  <div class="container">
+    <nav class="nav" role="navigation" aria-label="Navegación principal">
+      <a href="index.html" class="nav__logo">Cambio<span>Fit</span></a>
+      <ul class="nav__links" role="list">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
+        <li><a href="contacto.html" aria-current="page">Contacto</a></li>
+      </ul>
+      <a href="blog.html" class="btn btn--primary">Ver artículos</a>
+      <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMobile">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+  <div class="nav__mobile" id="navMobile" aria-hidden="true">
+    <a href="index.html">Inicio</a>
+    <a href="blog.html">Blog</a>
+    <a href="sobre-nosotros.html">Sobre nosotros</a>
+    <a href="contacto.html">Contacto</a>
+    <a href="politica-privacidad.html">Privacidad</a>
+  </div>
+</header>
+
+<main id="main">
+  <div class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Ruta de navegación">
+        <a href="index.html">Inicio</a>
+        <span class="breadcrumb__sep" aria-hidden="true">›</span>
+        <span class="breadcrumb__current">Contacto</span>
+      </nav>
+      <h1 class="page-hero__title">Contacto</h1>
+      <p style="color:rgba(255,255,255,.55);font-size:1.125rem;max-width:520px;">¿Tienes alguna pregunta, sugerencia o detectaste algún error en nuestro contenido? Escríbenos.</p>
+    </div>
+  </div>
+
+  <section class="section" aria-labelledby="contacto-title">
+    <div class="container">
+      <div class="contact-layout">
+        <div>
+          <h2 class="contact-info__title" id="contacto-title">¿En qué podemos ayudarte?</h2>
+          <p class="contact-info__text">Leemos todos los mensajes que recibimos. Si tienes dudas sobre alguno de nuestros artículos, quieres sugerir un tema o simplemente quieres saludarnos, adelante.</p>
+          <p class="contact-info__text" style="margin-top:1rem;">Recuerda que CambioFit ofrece información educativa general. Para asesoramiento nutricional o de salud personalizado, consulta siempre con un profesional titulado.</p>
+
+          <div class="contact-card" aria-label="Información de contacto">
+            <div class="contact-card__item">
+              <span class="contact-card__icon" aria-hidden="true">✉️</span>
+              <div>
+                <p style="color:rgba(255,255,255,.7);font-weight:600;font-size:.875rem;">Email</p>
+                <p>hola@cambiofit.com</p>
+              </div>
+            </div>
+            <div class="contact-card__item">
+              <span class="contact-card__icon" aria-hidden="true">🕐</span>
+              <div>
+                <p style="color:rgba(255,255,255,.7);font-weight:600;font-size:.875rem;">Tiempo de respuesta</p>
+                <p>Respondemos en un plazo de 2–5 días laborables</p>
+              </div>
+            </div>
+            <div class="contact-card__item">
+              <span class="contact-card__icon" aria-hidden="true">📍</span>
+              <div>
+                <p style="color:rgba(255,255,255,.7);font-weight:600;font-size:.875rem;">Idioma</p>
+                <p>Atendemos en español</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <form id="contactForm" novalidate aria-label="Formulario de contacto">
+            <div class="form-group">
+              <label class="form-label" for="nombre">Nombre <span aria-hidden="true">*</span></label>
+              <input class="form-input" type="text" id="nombre" name="nombre" required autocomplete="name" placeholder="Tu nombre">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="email">Correo electrónico <span aria-hidden="true">*</span></label>
+              <input class="form-input" type="email" id="email" name="email" required autocomplete="email" placeholder="tu@email.com">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="asunto">Asunto <span aria-hidden="true">*</span></label>
+              <input class="form-input" type="text" id="asunto" name="asunto" required placeholder="¿De qué quieres hablar?">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="mensaje">Mensaje <span aria-hidden="true">*</span></label>
+              <textarea class="form-textarea" id="mensaje" name="mensaje" required placeholder="Escribe tu mensaje aquí..."></textarea>
+            </div>
+            <div class="form-consent">
+              <input type="checkbox" id="consentimiento" name="consentimiento" required>
+              <label for="consentimiento">He leído y acepto la <a href="politica-privacidad.html">política de privacidad</a></label>
+            </div>
+            <button type="submit" class="btn btn--primary btn--lg" style="width:100%;">Enviar mensaje</button>
+          </form>
+          <div class="form-success" id="formSuccess" role="alert">
+            <strong>¡Mensaje enviado!</strong> Gracias por escribirnos. Te responderemos en los próximos días laborables.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__logo">Cambio<span>Fit</span></div>
+        <p class="footer__desc">Contenido educativo sobre entrenamiento y nutrición basado en fuentes fiables.</p>
+        <p class="footer__disclaimer"><strong>Aviso:</strong> Este sitio es informativo y no sustituye el consejo de un profesional sanitario.</p>
+      </div>
+      <div>
+        <p class="footer__col-title">Artículos</p>
+        <ul class="footer__links" role="list">
+          <li><a href="rutina-fuerza-principiantes.html">Rutina para principiantes</a></li>
+          <li><a href="deficit-calorico.html">Déficit calórico</a></li>
+          <li><a href="creatina-guia.html">Creatina</a></li>
+          <li><a href="hiit-vs-cardio.html">HIIT vs cardio</a></li>
+          <li><a href="meal-prep.html">Meal prep</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__col-title">Sitio</p>
+        <ul class="footer__links" role="list">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__col-title">Legal</p>
+        <ul class="footer__links" role="list">
+          <li><a href="politica-privacidad.html">Privacidad</a></li>
+          <li><a href="politica-cookies.html">Cookies</a></li>
+          <li><a href="aviso-legal.html">Aviso legal</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy">© <span id="year"></span> CambioFit — Todos los derechos reservados</p>
+      <nav class="footer__legal" aria-label="Legal">
+        <a href="politica-privacidad.html">Privacidad</a>
+        <a href="politica-cookies.html">Cookies</a>
+        <a href="aviso-legal.html">Aviso legal</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Consentimiento de cookies" aria-hidden="true">
+  <div class="cookie-banner__inner">
+    <p class="cookie-banner__text">Usamos cookies propias y de terceros para mejorar tu experiencia. <a href="politica-cookies.html">Más información</a></p>
+    <div class="cookie-banner__actions">
+      <button id="cookieReject" class="btn btn--ghost" style="font-size:.75rem;padding:.5rem 1rem;">Solo esenciales</button>
+      <button id="cookieAccept" class="btn btn--primary">Aceptar</button>
+    </div>
+  </div>
+</div>
+<script src="script.js" defer></script>
+</body>
+</html>
