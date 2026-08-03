@@ -1,238 +1,601 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blog — Artículos de Fitness y Nutrición | CambioFit</title>
-<meta name="description" content="Todos los artículos de CambioFit sobre entrenamiento, nutrición, pérdida de peso, musculación y hábitos saludables. Filtra por categoría y encuentra lo que buscas.">
-<link rel="canonical" href="https://cambiofit.github.io/blog.html">
-<meta property="og:title" content="Blog — Artículos de Fitness y Nutrición | CambioFit">
-<meta property="og:description" content="Artículos prácticos sobre entrenamiento, nutrición y hábitos saludables en español.">
-<meta property="og:type" content="website">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6897881215758208"
-     crossorigin="anonymous"></script>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Blog — Artículos de Fitness y Nutrición | CambioFit</title>
+
+  <meta name="description"
+    content="Todos los artículos de CambioFit sobre entrenamiento, nutrición, suplementación, running y hábitos saludables.">
+
+  <link rel="canonical" href="https://cambiofit.online/blog.html">
+
+  <meta property="og:title" content="Blog — Artículos de Fitness y Nutrición | CambioFit">
+
+  <meta property="og:description"
+    content="Guías prácticas sobre entrenamiento, nutrición, running y salud basadas en evidencia.">
+
+  <meta property="og:type" content="website">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6897881215758208"
+    crossorigin="anonymous"></script>
+
 </head>
+
 <body>
-<a class="skip-link" href="#main">Saltar al contenido principal</a>
 
-<header class="site-header" role="banner">
-  <div class="container">
-    <nav class="nav" role="navigation" aria-label="Navegación principal">
-      <a href="index.html" class="nav__logo">Cambio<span>Fit</span></a>
-      <ul class="nav__links" role="list">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="blog.html" aria-current="page">Blog</a></li>
-        <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-      </ul>
-      <a href="blog.html" class="btn btn--primary">Ver artículos</a>
-      <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMobile">
-        <span></span><span></span><span></span>
-      </button>
-    </nav>
-  </div>
-  <div class="nav__mobile" id="navMobile" aria-hidden="true">
-    <a href="index.html">Inicio</a>
-    <a href="blog.html">Blog</a>
-    <a href="sobre-nosotros.html">Sobre nosotros</a>
-    <a href="contacto.html">Contacto</a>
-    <a href="privacidad.html">Privacidad</a>
-  </div>
-</header>
+  <a class="skip-link" href="#main">
 
-<main id="main">
+    Saltar al contenido principal
 
-  <div class="page-hero">
-    <div class="container">
-      <nav class="breadcrumb" aria-label="Ruta de navegación">
-        <a href="index.html">Inicio</a>
-        <span class="breadcrumb__sep" aria-hidden="true">›</span>
-        <span class="breadcrumb__current">Blog</span>
-      </nav>
-      <h1 class="page-hero__title">Todos los artículos</h1>
-      <p style="color:rgba(255,255,255,.55);font-size:1.125rem;max-width:520px;">Guías prácticas de entrenamiento, nutrición y hábitos saludables. Usa los filtros para encontrar lo que necesitas.</p>
-    </div>
-  </div>
+  </a>
 
-  <!-- AD SLOT -->
-  <div class="container" style="padding-block:1.5rem;">
-    <div class="ad-slot ad-slot--banner" aria-label="Espacio publicitario"></div>
-  </div>
+  <header class="site-header" role="banner">
 
-  <section class="section" aria-label="Artículos del blog">
     <div class="container">
 
-      <div class="blog-filters" role="group" aria-label="Filtrar por categoría">
-        <button class="filter-btn is-active" data-filter="all">Todos</button>
-        <button class="filter-btn" data-filter="entrenamiento">🏋️ Entrenamiento</button>
-        <button class="filter-btn" data-filter="nutricion">🥗 Nutrición</button>
-        <button class="filter-btn" data-filter="cardio">🏃 Cardio</button>
-        <button class="filter-btn" data-filter="suplementos">💊 Suplementos</button>
-        <button class="filter-btn" data-filter="recetas">🍳 Recetas</button>
-      </div>
+      <nav class="nav" role="navigation" aria-label="Navegación principal">
 
-      <div class="articles__grid">
+        <a href="index.html" class="nav__logo">
 
-        <article class="article-card" data-category="entrenamiento">
-          <a href="rutina-fuerza-principiantes.html" tabindex="-1" aria-hidden="true">
-            <div class="article-card__img"><div class="article-card__img-placeholder">🏋️</div></div>
-          </a>
-          <div class="article-card__body">
-            <span class="article-card__cat">Entrenamiento</span>
-            <h2 class="article-card__title"><a href="rutina-fuerza-principiantes.html">Rutina de fuerza para principiantes: guía de 12 semanas</a></h2>
-            <p class="article-card__excerpt">Empieza a entrenar con fuerza de forma segura y progresiva. Ejercicios fundamentales, progresión semanal y errores a evitar.</p>
-            <div class="article-card__meta"><span>Entrenamiento</span><span class="article-card__meta-dot">·</span><span>12 min lectura</span></div>
-          </div>
-        </article>
+          Cambio<span>Fit</span>
 
-        <article class="article-card" data-category="nutricion">
-          <a href="deficit-calorico.html" tabindex="-1" aria-hidden="true">
-            <div class="article-card__img"><div class="article-card__img-placeholder">⚖️</div></div>
-          </a>
-          <div class="article-card__body">
-            <span class="article-card__cat">Nutrición</span>
-            <h2 class="article-card__title"><a href="deficit-calorico.html">Déficit calórico: cómo calcularlo y aplicarlo sin pasar hambre</a></h2>
-            <p class="article-card__excerpt">Todo lo necesario para perder grasa de forma sostenible sin sacrificar músculo ni tu calidad de vida.</p>
-            <div class="article-card__meta"><span>Nutrición</span><span class="article-card__meta-dot">·</span><span>8 min lectura</span></div>
-          </div>
-        </article>
+        </a>
 
-        <article class="article-card" data-category="suplementos">
-          <a href="creatina-guia.html" tabindex="-1" aria-hidden="true">
-            <div class="article-card__img"><div class="article-card__img-placeholder">💊</div></div>
-          </a>
-          <div class="article-card__body">
-            <span class="article-card__cat">Suplementos</span>
-            <h2 class="article-card__title"><a href="creatina-guia.html">Creatina monohidrato: guía completa basada en evidencia</a></h2>
-            <p class="article-card__excerpt">Qué es, cómo funciona, cuándo tomarla y para quién tiene sentido. Sin mitos, solo ciencia.</p>
-            <div class="article-card__meta"><span>Suplementos</span><span class="article-card__meta-dot">·</span><span>11 min lectura</span></div>
-          </div>
-        </article>
+        <ul class="nav__links" role="list">
 
-        <article class="article-card" data-category="cardio">
-          <a href="hiit-vs-cardio.html" tabindex="-1" aria-hidden="true">
-            <div class="article-card__img"><div class="article-card__img-placeholder">🏃</div></div>
-          </a>
-          <div class="article-card__body">
-            <span class="article-card__cat">Cardio</span>
-            <h2 class="article-card__title"><a href="hiit-vs-cardio.html">HIIT vs cardio continuo: ¿cuál quema más grasa?</a></h2>
-            <p class="article-card__excerpt">Comparamos ambos métodos de forma objetiva para que elijas el que mejor se adapta a tus objetivos.</p>
-            <div class="article-card__meta"><span>Cardio</span><span class="article-card__meta-dot">·</span><span>7 min lectura</span></div>
-          </div>
-        </article>
-
-        <article class="article-card" data-category="recetas">
-          <a href="meal-prep.html" tabindex="-1" aria-hidden="true">
-            <div class="article-card__img"><div class="article-card__img-placeholder">🍳</div></div>
-          </a>
-          <div class="article-card__body">
-            <span class="article-card__cat">Recetas fit</span>
-            <h2 class="article-card__title"><a href="meal-prep.html">Meal prep semanal: 5 días de comidas en 2 horas</a></h2>
-            <p class="article-card__excerpt">Prepara tus comidas de toda la semana de forma eficiente, económica y deliciosa. Incluye lista de la compra.</p>
-            <div class="article-card__meta"><span>Recetas</span><span class="article-card__meta-dot">·</span><span>9 min lectura</span></div>
-          </div>
-        </article>
-
-        <article class="article-card" data-category="entrenamiento">
-          <a href="proteina-musculo.html" tabindex="-1" aria-hidden="true">
-            <div class="article-card__img"><div class="article-card__img-placeholder">💪</div></div>
-          </a>
-          <div class="article-card__body">
-            <span class="article-card__cat">Musculación</span>
-            <h2 class="article-card__title"><a href="proteina-musculo.html">¿Cuánta proteína necesitas para ganar músculo?</a></h2>
-            <p class="article-card__excerpt">La respuesta basada en la evidencia: gramos por kilo, mejores fuentes proteicas y mitos habituales desmentidos.</p>
-            <div class="article-card__meta"><span>Musculación</span><span class="article-card__meta-dot">·</span><span>10 min lectura</span></div>
-          </div>
-        </article>
-
-        <article class="article-card" data-category="entrenamiento">
-          <a href="entrenamiento-casa.html" tabindex="-1" aria-hidden="true">
-            <div class="article-card__img"><div class="article-card__img-placeholder">🏠</div></div>
-          </a>
-          <div class="article-card__body">
-            <span class="article-card__cat">Entrenamiento</span>
-            <h2 class="article-card__title"><a href="entrenamiento-casa.html">Entrenamiento en casa efectivo: cómo progresar sin gimnasio</a></h2>
-            <p class="article-card__excerpt">Rutinas completas para hacer en casa con o sin material. Progresión real y ejercicios adaptados a todos los niveles.</p>
-            <div class="article-card__meta"><span>Entrenamiento</span><span class="article-card__meta-dot">·</span><span>11 min lectura</span></div>
-          </div>
-        </article>
-
-        <article class="article-card" data-category="nutricion">
-          <a href="perder-grasa-errores.html" tabindex="-1" aria-hidden="true">
-            <div class="article-card__img"><div class="article-card__img-placeholder">🔥</div></div>
-          </a>
-          <div class="article-card__body">
-            <span class="article-card__cat">Nutrición</span>
-            <h2 class="article-card__title"><a href="perder-grasa-errores.html">8 errores al intentar perder grasa y cómo evitarlos</a></h2>
-            <p class="article-card__excerpt">Los fallos más comunes que frenan la pérdida de grasa y estrategias concretas para superarlos de una vez.</p>
-            <div class="article-card__meta"><span>Nutrición</span><span class="article-card__meta-dot">·</span><span>8 min lectura</span></div>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer class="site-footer" role="contentinfo">
-  <div class="container">
-    <div class="footer__grid">
-      <div>
-        <div class="footer__logo">Cambio<span>Fit</span></div>
-        <p class="footer__desc">Contenido educativo sobre entrenamiento y nutrición basado en fuentes fiables.</p>
-        <p class="footer__disclaimer"><strong>Aviso:</strong> Este sitio es informativo y no sustituye el consejo de un profesional sanitario.</p>
-      </div>
-      <div>
-        <p class="footer__col-title">Artículos</p>
-        <ul class="footer__links" role="list">
-          <li><a href="rutina-fuerza-principiantes.html">Rutina para principiantes</a></li>
-          <li><a href="deficit-calorico.html">Déficit calórico</a></li>
-          <li><a href="creatina-guia.html">Creatina</a></li>
-          <li><a href="hiit-vs-cardio.html">HIIT vs cardio</a></li>
-          <li><a href="meal-prep.html">Meal prep</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="footer__col-title">Sitio</p>
-        <ul class="footer__links" role="list">
           <li><a href="index.html">Inicio</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="footer__col-title">Legal</p>
-        <ul class="footer__links" role="list">
-          <li><a href="politica-privacidad.html">Privacidad</a></li>
-          <li><a href="politica-cookies.html">Cookies</a></li>
-          <li><a href="aviso-legal.html">Aviso legal</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer__bottom">
-      <p class="footer__copy">© <span id="year"></span> CambioFit — Todos los derechos reservados</p>
-      <nav class="footer__legal" aria-label="Legal">
-        <a href="politica-privacidad.html">Privacidad</a>
-        <a href="politica-cookies.html">Cookies</a>
-        <a href="aviso-legal.html">Aviso legal</a>
-      </nav>
-    </div>
-  </div>
-</footer>
 
-<div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Consentimiento de cookies" aria-hidden="true">
-  <div class="cookie-banner__inner">
-    <p class="cookie-banner__text">Usamos cookies propias y de terceros para mejorar tu experiencia. <a href="cookies.html">Más información</a></p>
-    <div class="cookie-banner__actions">
-      <button id="cookieReject" class="btn btn--ghost" style="font-size:.75rem;padding:.5rem 1rem;">Solo esenciales</button>
-      <button id="cookieAccept" class="btn btn--primary">Aceptar</button>
+          <li><a href="blog.html" aria-current="page">Blog</a></li>
+
+          <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
+
+          <li><a href="contacto.html">Contacto</a></li>
+
+        </ul>
+
+        <a href="blog.html" class="btn btn--primary">
+
+          Ver artículos
+
+        </a>
+
+        <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false"
+          aria-controls="navMobile">
+
+          <span></span>
+
+          <span></span>
+
+          <span></span>
+
+        </button>
+
+      </nav>
+
     </div>
-  </div>
-</div>
-<script src="script.js" defer></script>
+
+    <div class="nav__mobile" id="navMobile" aria-hidden="true">
+
+      <a href="index.html">Inicio</a>
+
+      <a href="blog.html">Blog</a>
+
+      <a href="sobre-nosotros.html">Sobre nosotros</a>
+
+      <a href="contacto.html">Contacto</a>
+
+      <a href="politica-privacidad.html">Privacidad</a>
+
+    </div>
+
+  </header>
+
+  <main id="main">
+
+    <div class="page-hero">
+
+      <div class="container">
+
+        <nav class="breadcrumb" aria-label="Ruta de navegación">
+
+          <a href="index.html">
+
+            Inicio
+
+          </a>
+
+          <span class="breadcrumb__sep">
+
+            ›
+
+          </span>
+
+          <span class="breadcrumb__current">
+
+            Blog
+
+          </span>
+
+        </nav>
+
+        <h1 class="page-hero__title">
+
+          Todos los artículos
+
+        </h1>
+
+        <p style="color:rgba(255,255,255,.55);font-size:1.125rem;max-width:620px;">
+
+          Descubre guías completas sobre entrenamiento, nutrición, suplementación, running, recuperación y hábitos
+          saludables basadas en evidencia científica.
+
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="container" style="padding-block:1.5rem;">
+
+      <div class="ad-slot ad-slot--banner" aria-label="Espacio publicitario"></div>
+
+    </div>
+
+    <section class="section" aria-label="Artículos del blog">
+
+      <div class="container">
+
+        <div class="blog-filters" role="group" aria-label="Filtrar por categoría">
+
+          <button class="filter-btn is-active" data-filter="all">
+
+            Todos
+
+          </button>
+
+          <button class="filter-btn" data-filter="entrenamiento">
+
+            🏋️ Entrenamiento
+
+          </button>
+
+          <button class="filter-btn" data-filter="nutricion">
+
+            🥗 Nutrición
+
+          </button>
+
+          <button class="filter-btn" data-filter="cardio">
+
+            🏃 Running
+
+          </button>
+
+          <button class="filter-btn" data-filter="suplementos">
+
+            💊 Suplementos
+
+          </button>
+
+          <button class="filter-btn" data-filter="recetas">
+
+            🍳 Recetas
+
+          </button>
+
+        </div>
+
+        <div class="articles__grid">
+          <article class="article-card" data-category="entrenamiento">
+            <a href="rutina-fuerza-principiantes.html" tabindex="-1" aria-hidden="true">
+              <div class="article-card__img">
+                <div class="article-card__img-placeholder">🏋️</div>
+              </div>
+            </a>
+            <div class="article-card__body">
+              <span class="article-card__cat">Entrenamiento</span>
+              <h2 class="article-card__title"><a href="rutina-fuerza-principiantes.html">Rutina de fuerza para
+                  principiantes: guía de 12 semanas</a></h2>
+              <p class="article-card__excerpt">Empieza a entrenar con fuerza de forma segura y progresiva. Ejercicios
+                fundamentales, progresión semanal y errores a evitar.</p>
+              <div class="article-card__meta"><span>Entrenamiento</span><span
+                  class="article-card__meta-dot">·</span><span>12 min lectura</span></div>
+            </div>
+          </article>
+
+          <article class="article-card" data-category="nutricion">
+            <a href="deficit-calorico.html" tabindex="-1" aria-hidden="true">
+              <div class="article-card__img">
+                <div class="article-card__img-placeholder">⚖️</div>
+              </div>
+            </a>
+            <div class="article-card__body">
+              <span class="article-card__cat">Nutrición</span>
+              <h2 class="article-card__title"><a href="deficit-calorico.html">Déficit calórico: cómo calcularlo y
+                  aplicarlo sin pasar hambre</a></h2>
+              <p class="article-card__excerpt">Todo lo necesario para perder grasa de forma sostenible sin sacrificar
+                músculo ni calidad de vida.</p>
+              <div class="article-card__meta"><span>Nutrición</span><span class="article-card__meta-dot">·</span><span>8
+                  min lectura</span></div>
+            </div>
+          </article>
+
+          <article class="article-card" data-category="suplementos">
+            <a href="creatina-guia.html" tabindex="-1" aria-hidden="true">
+              <div class="article-card__img">
+                <div class="article-card__img-placeholder">💊</div>
+              </div>
+            </a>
+            <div class="article-card__body">
+              <span class="article-card__cat">Suplementos</span>
+              <h2 class="article-card__title"><a href="creatina-guia.html">Creatina monohidrato: guía completa basada en
+                  evidencia</a></h2>
+              <p class="article-card__excerpt">Qué es, cómo funciona, cuándo tomarla y para quién tiene sentido.</p>
+              <div class="article-card__meta"><span>Suplementos</span><span
+                  class="article-card__meta-dot">·</span><span>11 min lectura</span></div>
+            </div>
+          </article>
+
+          <article class="article-card" data-category="cardio">
+            <a href="hiit-vs-cardio.html" tabindex="-1" aria-hidden="true">
+              <div class="article-card__img">
+                <div class="article-card__img-placeholder">🏃</div>
+              </div>
+            </a>
+            <div class="article-card__body">
+              <span class="article-card__cat">Cardio</span>
+              <h2 class="article-card__title"><a href="hiit-vs-cardio.html">HIIT vs cardio continuo: ¿cuál quema más
+                  grasa?</a></h2>
+              <p class="article-card__excerpt">Comparativa completa entre ambos métodos para elegir el más adecuado
+                según tus objetivos.</p>
+              <div class="article-card__meta"><span>Cardio</span><span class="article-card__meta-dot">·</span><span>7
+                  min lectura</span></div>
+            </div>
+          </article>
+
+          <article class="article-card" data-category="recetas">
+            <a href="meal-prep.html" tabindex="-1" aria-hidden="true">
+              <div class="article-card__img">
+                <div class="article-card__img-placeholder">🍳</div>
+              </div>
+            </a>
+            <div class="article-card__body">
+              <span class="article-card__cat">Recetas</span>
+              <h2 class="article-card__title"><a href="meal-prep.html">Meal prep semanal: 5 días de comidas en 2
+                  horas</a></h2>
+              <p class="article-card__excerpt">Organiza tus comidas de toda la semana de forma práctica, saludable y
+                económica.</p>
+              <div class="article-card__meta"><span>Recetas</span><span class="article-card__meta-dot">·</span><span>9
+                  min lectura</span></div>
+            </div>
+          </article>
+
+          <article class="article-card" data-category="entrenamiento">
+            <a href="proteina-musculo.html" tabindex="-1" aria-hidden="true">
+              <div class="article-card__img">
+                <div class="article-card__img-placeholder">💪</div>
+              </div>
+            </a>
+            <div class="article-card__body">
+              <span class="article-card__cat">Musculación</span>
+              <h2 class="article-card__title"><a href="proteina-musculo.html">¿Cuánta proteína necesitas para ganar
+                  músculo?</a></h2>
+              <p class="article-card__excerpt">Gramos por kilo, mejores fuentes de proteína y errores habituales.</p>
+              <div class="article-card__meta"><span>Musculación</span><span
+                  class="article-card__meta-dot">·</span><span>10 min lectura</span></div>
+            </div>
+          </article>
+
+          <article class="article-card" data-category="suplementos">
+            <a href="omega-3.html" tabindex="-1" aria-hidden="true">
+              <div class="article-card__img">
+                <div class="article-card__img-placeholder">🐟</div>
+              </div>
+            </a>
+            <div class="article-card__body">
+              <span class="article-card__cat">Suplementos</span>
+              <h2 class="article-card__title"><a href="omega-3.html">Omega-3: beneficios, dosis y alimentos</a></h2>
+              <p class="article-card__excerpt">Todo sobre los ácidos grasos omega-3, sus beneficios para la salud y
+                cuándo suplementarlos.</p>
+              <div class="article-card__meta"><span>Suplementos</span><span
+                  class="article-card__meta-dot">·</span><span>10 min lectura</span></div>
+            </div>
+          </article>
+          <article class="article-card" data-category="suplementos">
+            <a href="beta-alanina.html" tabindex="-1" aria-hidden="true">
+              <div class="article-card__img">
+                <div class="article-card__img-placeholder">⚡</div>
+              </div>
+            </a>
+            <div class="article-card__body">
+              <span class="article-card__cat">Suplementos</span>
+              <h2 class="article-card__title"><a href="beta-alanina.html">Beta-alanina: qué es y cómo mejora el
+                  rendimiento</a></h2>
+              <p class="article-card__excerpt">Conoce cómo funciona la beta-alanina, sus beneficios, dosis recomendada y
+                cuándo puede ayudarte a entrenar mejor.</p>
+              <div class="article-card__meta"><span>Suplementos</span><span
+                  class="article-card__meta-dot">·</span><span>9 min lectura</span></div>
+            </div>
+          </article>
+
+          <article class="article-card" data-category="salud">
+            <a href="descanso-recuperacion.html" tabindex="-1" aria-hidden="true">
+              <div class="article-card__img">
+                <div class="article-card__img-placeholder">😴</div>
+              </div>
+            </a>
+            <div class="article-card__body">
+              <span class="article-card__cat">Salud</span>
+              <h2 class="article-card__title"><a href="descanso-recuperacion.html">Descanso y recuperación muscular: la
+                  clave para progresar</a></h2>
+              <p class="article-card__excerpt">Dormir bien y recuperarse correctamente es esencial para mejorar el
+                rendimiento y reducir el riesgo de lesiones.</p>
+              <div class="article-card__meta"><span>Salud</span><span class="article-card__meta-dot">·</span><span>10
+                  min lectura</span></div>
+            </div>
+          </article>
+
+          <article class="article-card" data-category="nutricion">
+            <a href="macronutrientes.html" tabindex="-1" aria-hidden="true">
+              <div class="article-card__img">
+                <div class="article-card__img-placeholder">🥗</div>
+              </div>
+            </a>
+            <div class="article-card__body">
+              <span class="article-card__cat">Nutrición</span>
+              <h2 class="article-card__title"><a href="macronutrientes.html">Macronutrientes: proteínas, carbohidratos y
+                  grasas explicados</a></h2>
+              <p class="article-card__excerpt">Aprende qué función tiene cada macronutriente y cómo construir una
+                alimentación equilibrada.</p>
+              <div class="article-card__meta"><span>Nutrición</span><span
+                  class="article-card__meta-dot">·</span><span>10 min lectura</span></div>
+            </div>
+          </article>
+
+          <article class="article-card" data-category="cardio">
+            <a href="calentamiento-running.html" tabindex="-1" aria-hidden="true">
+              <div class="article-card__img">
+                <div class="article-card__img-placeholder">🏃</div>
+              </div>
+            </a>
+            <div class="article-card__body">
+              <span class="article-card__cat">Running</span>
+              <h2 class="article-card__title"><a href="calentamiento-running.html">Cómo calentar antes de correr para
+                  evitar lesiones</a></h2>
+              <p class="article-card__excerpt">Una rutina sencilla de movilidad y activación puede mejorar tu
+                rendimiento y reducir el riesgo de lesión.</p>
+              <div class="article-card__meta"><span>Running</span><span class="article-card__meta-dot">·</span><span>9
+                  min lectura</span></div>
+            </div>
+          </article>
+
+          <article class="article-card" data-category="entrenamiento">
+            <a href="errores-gimnasio-principiantes.html" tabindex="-1" aria-hidden="true">
+              <div class="article-card__img">
+                <div class="article-card__img-placeholder">🏋️</div>
+              </div>
+            </a>
+            <div class="article-card__body">
+              <span class="article-card__cat">Entrenamiento</span>
+              <h2 class="article-card__title"><a href="errores-gimnasio-principiantes.html">10 errores que cometen los
+                  principiantes en el gimnasio</a></h2>
+              <p class="article-card__excerpt">Evita los fallos más comunes al empezar a entrenar y progresa de forma
+                segura desde el primer día.</p>
+              <div class="article-card__meta"><span>Entrenamiento</span><span
+                  class="article-card__meta-dot">·</span><span>11 min lectura</span></div>
+            </div>
+          </article>
+
+          <article class="article-card" data-category="entrenamiento">
+            <a href="entrenamiento-casa.html" tabindex="-1" aria-hidden="true">
+              <div class="article-card__img">
+                <div class="article-card__img-placeholder">🏠</div>
+              </div>
+            </a>
+            <div class="article-card__body">
+              <span class="article-card__cat">Entrenamiento</span>
+              <h2 class="article-card__title"><a href="entrenamiento-casa.html">Entrenamiento en casa efectivo: cómo
+                  progresar sin gimnasio</a></h2>
+              <p class="article-card__excerpt">Rutinas completas para entrenar desde casa con o sin material y seguir
+                mejorando.</p>
+              <div class="article-card__meta"><span>Entrenamiento</span><span
+                  class="article-card__meta-dot">·</span><span>11 min lectura</span></div>
+            </div>
+          </article>
+
+          <article class="article-card" data-category="nutricion">
+            <a href="perder-grasa-errores.html" tabindex="-1" aria-hidden="true">
+              <div class="article-card__img">
+                <div class="article-card__img-placeholder">🔥</div>
+              </div>
+            </a>
+            <div class="article-card__body">
+              <span class="article-card__cat">Nutrición</span>
+              <h2 class="article-card__title"><a href="perder-grasa-errores.html">8 errores al intentar perder grasa y
+                  cómo evitarlos</a></h2>
+              <p class="article-card__excerpt">Los errores más frecuentes que frenan la pérdida de grasa y cómo
+                solucionarlos de forma efectiva.</p>
+              <div class="article-card__meta"><span>Nutrición</span><span class="article-card__meta-dot">·</span><span>8
+                  min lectura</span></div>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+    <footer class="site-footer" role="contentinfo">
+
+      <div class="container">
+
+        <div class="footer__grid">
+
+          <div>
+
+            <div class="footer__logo">
+
+              Cambio<span>Fit</span>
+
+            </div>
+
+            <p class="footer__desc">
+
+              Contenido educativo sobre entrenamiento, nutrición, suplementación y hábitos saludables basado en fuentes
+              fiables.
+
+            </p>
+
+            <p class="footer__disclaimer">
+
+              <strong>Aviso:</strong> Este sitio tiene fines únicamente informativos y no sustituye el consejo de un
+              profesional sanitario.
+
+            </p>
+
+          </div>
+
+          <div>
+
+            <p class="footer__col-title">
+
+              Artículos destacados
+
+            </p>
+
+            <ul class="footer__links" role="list">
+
+              <li><a href="rutina-fuerza-principiantes.html">Rutina para principiantes</a></li>
+
+              <li><a href="creatina-guia.html">Creatina</a></li>
+
+              <li><a href="proteina-musculo.html">Proteína</a></li>
+
+              <li><a href="macronutrientes.html">Macronutrientes</a></li>
+
+              <li><a href="calentamiento-running.html">Calentamiento running</a></li>
+
+            </ul>
+
+          </div>
+
+          <div>
+
+            <p class="footer__col-title">
+
+              Sitio
+
+            </p>
+
+            <ul class="footer__links" role="list">
+
+              <li><a href="index.html">Inicio</a></li>
+
+              <li><a href="blog.html">Blog</a></li>
+
+              <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
+
+              <li><a href="contacto.html">Contacto</a></li>
+
+            </ul>
+
+          </div>
+
+          <div>
+
+            <p class="footer__col-title">
+
+              Legal
+
+            </p>
+
+            <ul class="footer__links" role="list">
+
+              <li><a href="politica-privacidad.html">Política de privacidad</a></li>
+
+              <li><a href="politica-cookies.html">Política de cookies</a></li>
+
+              <li><a href="aviso-legal.html">Aviso legal</a></li>
+
+            </ul>
+
+          </div>
+
+        </div>
+
+        <div class="footer__bottom">
+
+          <p class="footer__copy">
+
+            © <span id="year"></span> CambioFit — Todos los derechos reservados
+
+          </p>
+
+          <nav class="footer__legal" aria-label="Legal">
+
+            <a href="politica-privacidad.html">Privacidad</a>
+
+            <a href="politica-cookies.html">Cookies</a>
+
+            <a href="aviso-legal.html">Aviso legal</a>
+
+          </nav>
+
+        </div>
+
+      </div>
+
+    </footer>
+
+    <div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Consentimiento de cookies"
+      aria-hidden="true">
+
+      <div class="cookie-banner__inner">
+
+        <p class="cookie-banner__text">
+
+          Usamos cookies propias y de terceros para mejorar tu experiencia. <a href="politica-cookies.html">Más
+            información</a>
+
+        </p>
+
+        <div class="cookie-banner__actions">
+
+          <button id="cookieReject" class="btn btn--ghost" style="font-size:.75rem;padding:.5rem 1rem;">
+
+            Solo esenciales
+
+          </button>
+
+          <button id="cookieAccept" class="btn btn--primary">
+
+            Aceptar
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <script src="script.js" defer></script>
+
 </body>
+
 </html>
