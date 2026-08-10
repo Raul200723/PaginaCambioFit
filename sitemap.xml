@@ -1,80 +1,151 @@
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-<url>
-<loc>https://cambiofit.online/</loc>
-<priority>1.0</priority>
-</url>
+    <!-- Página principal -->
+    <url>
+        <loc>https://cambiofit.online/</loc>
+        <priority>1.0</priority>
+    </url>
 
-<url>
-<loc>https://cambiofit.online/blog.html</loc>
-<priority>0.9</priority>
-</url>
+    <!-- Blog -->
+    <url>
+        <loc>https://cambiofit.online/blog.html</loc>
+        <priority>0.9</priority>
+    </url>
 
-<url>
-<loc>https://cambiofit.online/guia-de-creatina.html</loc>
-<priority>0.8</priority>
-</url>
+    <!-- Artículos de entrenamiento -->
+    <url>
+        <loc>https://cambiofit.online/rutina-fuerza-principiantes.html</loc>
+        <priority>0.8</priority>
+    </url>
 
-<url>
-<loc>https://cambiofit.online/deficit-calorico.html</loc>
-<priority>0.8</priority>
-</url>
+    <url>
+        <loc>https://cambiofit.online/entrenamiento-casa.html</loc>
+        <priority>0.8</priority>
+    </url>
 
-<url>
-<loc>https://cambiofit.online/entrenamiento-casa.html</loc>
-<priority>0.8</priority>
-</url>
+    <url>
+        <loc>https://cambiofit.online/errores-gimnasio-principiantes.html</loc>
+        <priority>0.8</priority>
+    </url>
 
-<url>
-<loc>https://cambiofit.online/HIIT%20vs.%20cardio.html</loc>
-<priority>0.8</priority>
-</url>
+    <url>
+        <loc>https://cambiofit.online/habito-entrenamiento.html</loc>
+        <priority>0.8</priority>
+    </url>
 
-<url>
-<loc>https://cambiofit.online/meal-prep.html</loc>
-<priority>0.8</priority>
-</url>
+    <url>
+        <loc>https://cambiofit.online/sobrecarga-progresiva.html</loc>
+        <priority>0.8</priority>
+    </url>
 
-<url>
-<loc>https://cambiofit.online/perder-grasa-errores.html</loc>
-<priority>0.8</priority>
-</url>
+    <url>
+        <loc>https://cambiofit.online/descanso-recuperacion.html</loc>
+        <priority>0.8</priority>
+    </url>
 
-<url>
-<loc>https://cambiofit.online/proteina-musculo.html</loc>
-<priority>0.8</priority>
-</url>
+    <url>
+        <loc>https://cambiofit.online/volumen-entrenamiento-musculo.html</loc>
+        <priority>0.8</priority>
+    </url>
 
-<url>
-<loc>https://cambiofit.online/rutina-fuerza-principiantes.html</loc>
-<priority>0.8</priority>
-</url>
+    <!-- Artículos de nutrición -->
+    <url>
+        <loc>https://cambiofit.online/deficit-calorico.html</loc>
+        <priority>0.8</priority>
+    </url>
 
-<url>
-<loc>https://cambiofit.online/sobre-nosotros.html</loc>
-<priority>0.6</priority>
-</url>
+    <url>
+        <loc>https://cambiofit.online/macronutrientes.html</loc>
+        <priority>0.8</priority>
+    </url>
 
-<url>
-<loc>https://cambiofit.online/contacto.html</loc>
-<priority>0.6</priority>
-</url>
+    <url>
+        <loc>https://cambiofit.online/perder-grasa-errores.html</loc>
+        <priority>0.8</priority>
+    </url>
 
-<url>
-<loc>https://cambiofit.online/politica-privacidad.html</loc>
-<priority>0.4</priority>
-</url>
+    <url>
+        <loc>https://cambiofit.online/meal-prep.html</loc>
+        <priority>0.8</priority>
+    </url>
 
-<url>
-<loc>https://cambiofit.online/politica-cookies.html</loc>
-<priority>0.4</priority>
-</url>
+    <url>
+        <loc>https://cambiofit.online/hidratarse-entrenando.html</loc>
+        <priority>0.8</priority>
+    </url>
 
-<url>
-<loc>https://cambiofit.online/aviso-legal.html</loc>
-<priority>0.4</priority>
-</url>
+    <!-- Proteína y musculación -->
+    <url>
+        <loc>https://cambiofit.online/proteina-musculo.html</loc>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Suplementación -->
+    <url>
+        <loc>https://cambiofit.online/creatina-guia.html</loc>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://cambiofit.online/beta-alanina.html</loc>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://cambiofit.online/omega-3.html</loc>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://cambiofit.online/cafeina-rendimiento.html</loc>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Cardio y running -->
+    <url>
+        <loc>https://cambiofit.online/hiit-vs-cardio.html</loc>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://cambiofit.online/calentamiento-running.html</loc>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://cambiofit.online/zonas-frecuencia-cardiaca.html</loc>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Páginas informativas -->
+    <url>
+        <loc>https://cambiofit.online/sobre-nosotros.html</loc>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://cambiofit.online/contacto.html</loc>
+        <priority>0.6</priority>
+    </url>
+
+    <!-- Páginas legales -->
+    <url>
+        <loc>https://cambiofit.online/politica-privacidad.html</loc>
+        <priority>0.4</priority>
+    </url>
+
+    <url>
+        <loc>https://cambiofit.online/politica-cookies.html</loc>
+        <priority>0.4</priority>
+    </url>
+
+    <url>
+        <loc>https://cambiofit.online/aviso-legal.html</loc>
+        <priority>0.4</priority>
+    </url>
 
 </urlset>
+```
